@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Order {
 	
-	private ArrayList<Product> items;
+	private ArrayList<IProduct> items;
 		
-	public Order(ArrayList<Product> itemsOrdered) {
+	public Order(ArrayList<IProduct> itemsOrdered) {
 		items = itemsOrdered;
 	}
 	
