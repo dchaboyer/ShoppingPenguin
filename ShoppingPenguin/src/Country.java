@@ -1,11 +1,15 @@
+import java.util.ArrayList;
+
 public class Country {
 	
 	private String name;
 	private double funds;
+	private ArrayList<IProduct> inventory;
 	
 	public Country(String inputName) {
 		name = inputName;
 		funds = 1000;
+		inventory = new ArrayList<IProduct>();
 	}
 	
 	public String getName() {
@@ -16,16 +20,16 @@ public class Country {
 		return funds;
 	}
 	
-	public void placeOrder() {
-		
+	public void placeOrder(ArrayList<String> purchasedItems, Company supplier) {	
+		supplier.receiveOrder(purchasedItems, this);	
 	}
 	
-	public void pay() {
-		
+	public void pay(double total) {
+		funds -= total;
 	}
 	
-	public void receiveShipment() {
-		
+	public void receiveShipment(ArrayList<IProduct> incomingItems) {
+		inventory.addAll(incomingItems);
 	}
 	
 }
